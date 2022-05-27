@@ -8,6 +8,8 @@
   </head>
   <body>
     <section class="main">
+      @await Html.PartialAsync("Header")
+      @await Html.PartialAsync("Navbar")
       @RenderBody()
     </main>
   </body>

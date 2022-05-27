@@ -1,4 +1,13 @@
 @{
   Layout = "_Layout";
 }
-@await Html.PartialAsync("Navbar")
+
+@model Factory.Models.Engineer
+
+<h2>Are you sure you want to delete this Engineer?</h2>
+
+@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete" />
+}
