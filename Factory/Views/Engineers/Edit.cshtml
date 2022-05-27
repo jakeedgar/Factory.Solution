@@ -2,3 +2,23 @@
   Layout = "_Layout";
 }
 @await Html.PartialAsync("Navbar")
+
+@model Factory.Models.Engineer
+
+<h2>Edit</h2>
+
+<h4>Edit this Engineer: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.EngineerId)
+
+  @Html.LabelFor(model => model.Focus)
+  @Html.EditorFor(model => model.Focus)
+
+  @Html.Label("Select Machine")
+  @Html.DropDownList("MachineId")
+
+  <input type="submit" value="Save" />
+}
+
