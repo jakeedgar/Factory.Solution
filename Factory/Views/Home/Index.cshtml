@@ -1,3 +1,32 @@
 @{
   Layout = "_Splash";
 }
+
+
+@using Factory.Models;
+
+<h3>We Employ these awesome Engineers at a living wage!</h3>
+@if (@ViewBag.Engineers.Count == 0)
+{
+  <h3>Apply today!</h3>
+}
+<ul>
+  @foreach (Engineer engineer in ViewBag.Engineers)
+  {
+      <li>@Html.ActionLink($"{engineer.Name}", "Details", "Engineers", new { id = engineer.EngineerId })</li>
+  }
+</ul>
+
+<h3>These are the neat machines we use also for if you are wondering and stuff:</h3>
+@if (@ViewBag.Machines.Count == 0)
+{
+  <h3>No Machines sadface.jpg</h3>
+}
+<ul>
+  @foreach (Machine machine in ViewBag.Machines)
+  {
+    <li>@Html.ActionLink($"{machine.Name}", "Details", "Machines", new { id = machine.MachineId })</li>
+  }
+</ul>
+
+<p>@Html.ActionLink("Add new engineer", "Create", null, null, new { @Class = "btn btn-primary"})</p>

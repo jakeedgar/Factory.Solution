@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Factory.Migrations
 {
     [DbContext(typeof(FactoryContext))]
-    [Migration("20220527230000_FocusForEngineerField")]
-    partial class FocusForEngineerField
+    [Migration("20220606044151_UpdateEngineerAgain")]
+    partial class UpdateEngineerAgain
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,8 +24,8 @@ namespace Factory.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Focus")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<int>("MachineId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
